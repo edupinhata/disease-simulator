@@ -40,8 +40,12 @@
     <b>Health:</b> <span id="health_num"></span><br>
     <b>Sick:</b> <span id="sick_num">1</span><br>
     <b>Recovered:</b> <span id="recovered_num">0</span><br>
-    <div id = "simuSketch">
-    </div>
+    <b>Days:</b> <span = id="num_days">0</span><br>
+    <button type="button" onclick="startSimulation()" id="start_btn" >Start Simulation</button>
+            <br><br>
+
+    <div id="graphSketch"></div>
+    <div id = "simuSketch"></div>
 
     <h2>Controllers</h2>
 
@@ -54,8 +58,6 @@
     <b>Recover time:</b> <span id="recover_time">0</span><br>
     <input type="range" min="0" max="15" step="1" value="7" class="slider" id="recover_slider">
     <br>
-    <button type="button" onclick="startSimulation()" id="start_btn" >Start Simulation<button>
-
     <script>
         start_button = document.getElementById("start_btn");
 
@@ -106,6 +108,7 @@
     <script src="constants.js"></script>
     <script src="person.js"></script>
     <script src="population.js"></script>
+    <script src="chart.js"></script>
     <script src="simulation.js"></script>
 
 

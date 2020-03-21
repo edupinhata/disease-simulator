@@ -14,6 +14,8 @@ class SimulationCommon {
 
 const simulation = ( sketch ) => {
     // CONSTANTS
+    var days;
+
     // P5 FUNCTIONS
     //
     sketch.setup = function() {
@@ -22,6 +24,7 @@ const simulation = ( sketch ) => {
         sketch.background(70);
         population = new Population(POPULATION_SIZE)
         sketch.frameRate(FRAME_RATE);
+        days = 0;
 
         // Set colors
         HEALTHY_COLOR = sketch.color('white');
@@ -41,8 +44,12 @@ const simulation = ( sketch ) => {
                 if (sketch.frameCount % (SECONDS_PER_DAY * FRAME_RATE) == 0) {
                     population.next_day();
                     population.print_statistics();
-
+                    days += 1;
+                    update_days()
                 }
+            }
+            else {
+                START_SIMULATION = -1;
             }
         }
         if (START_SIMULATION == 0) {
@@ -50,6 +57,10 @@ const simulation = ( sketch ) => {
             sketch.setup()
         }
     };
+
+    update_days = function() {
+        document.getElementById("num_days").innerHTML = days;
+    }
 
     setup_variables = function() {
         MAX_SPEED = parseFloat(document.getElementById("speed_slider").value);
