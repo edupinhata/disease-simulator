@@ -1,6 +1,6 @@
 # Simulador de doenças
 
-<img src="/Users/pinhata/proj/disease-simulator/images/screen-shot-0.01.png" alt="Versão 0.01" style="zoom:50%;" />
+<img src="./images/screen-shot-0.01.png" alt="Versão 0.01" style="zoom:50%;" />
 
 ## Introdução
 
